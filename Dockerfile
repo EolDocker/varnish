@@ -8,6 +8,9 @@ RUN apt-get update -qq && \
   apt-get -yqq install varnish && \
   apt-get -yqq clean
 
+RUN chown varnishlog:varnishlog /var/log/varnish &&
+  chmod 750 /var/log/varnish
+
 ENV VARNISH_PORT 80
 ENV VARNISH_MEM  100M
 
