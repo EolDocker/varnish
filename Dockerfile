@@ -18,5 +18,4 @@ ENV VARNISH_MEM  100M
 EXPOSE 80
 VOLUME /etc/varnish
 
-COPY start.sh /start.sh
-CMD ["/start.sh"]
+CMD /usr/bin/supervisord
