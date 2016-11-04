@@ -1,3 +1,4 @@
 #!/bin/bash
-umask 0000
+umask 0022
+chmod a+x /
 /usr/bin/supervisord
