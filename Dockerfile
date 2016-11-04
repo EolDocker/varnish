@@ -13,7 +13,6 @@ RUN chown varnishlog:varnishlog /var/log/varnish && \
 
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config/docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
 
 ENV VARNISH_PORT 80
 ENV VARNISH_MEM  100M
@@ -22,4 +21,4 @@ ENV VARNISH_MEM  100M
 EXPOSE 80
 VOLUME /etc/varnish
 
-CMD /usr/bin/supervisord
+ENTRYPOINT ["/docker-entrypoint.sh"]
