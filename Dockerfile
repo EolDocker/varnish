@@ -13,7 +13,6 @@ RUN chown varnishlog:varnishlog /var/log/varnish && \
 
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY config/docker-entrypoint.sh /
-CHMOD 777 /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 ENV VARNISH_PORT 80
